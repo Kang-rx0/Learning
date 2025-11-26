@@ -10,3 +10,4 @@
     - Vue3 + Vite + TypeScript
 - **后端**：
     - FastAPI
+    - Django（学习中）
