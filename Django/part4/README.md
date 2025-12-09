@@ -161,4 +161,4 @@ Django的通用视图会根据传入的模型自动生成一个上下文变量�
 
 也可以通过 context_object_name 属性来指定自定义的上下文变量名称（如 IndexView 中所示，将其设置为 "latest_question_list"）。
 
-    *这里的上下文变量指的是 context变量，作为view和template之间的桥梁，传递数据，一般是字典。*
+    这里的上下文变量指的是 context变量，作为view和template之间的桥梁，传递数据，一般是字典
