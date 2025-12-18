@@ -1,0 +1,41 @@
+<!-- “/api/v1/user/login_action”路由地址 用于验证用户信息是否合法。通过后端接口服务进行验证，
+ 验证通过 会给用户签发一个token，然后重定向到聊天室地址api/v1/room/online? token=xxx上。 -->
+
+<!-- 签发的token一般会通过请求头进行传递。为了方便，这里使用查询参 数的方式进行token传递-->
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>用户登录</title>
+        </head>
+        <body>
+            <form action="api/v1/user/login_action" method="get" onsubmit="return check(this)">
+                用户名称：<input type="text" name="username"><br>
+                用户密码：<input type="password" name="password"><br>
+                <input type="submit" value="登录" onclick="check(this.form)">
+            </form>
+        </body>
+
+        <script type="text/javascript">
+         function check(form) {
+              if(form.username.value=='') {
+                    alert("请输入用户名称!");
+                    form.username.focus();
+                    return false;
+               }
+              if(form.phone_number.value=='') {
+                    alert("请输入用户号码!");
+                    form.phone_number.focus();
+                    return false;
+               }
+               if(form.password.value==''){
+                    alert("请输入用户密码!");
+                    form.password.focus();
+                    return false;
+                }
+                return true;
+              }
+        </script>
+
+    </html>

@@ -1,0 +1,42 @@
+<!--用户注册成功后默认会跳转到登录页面-->
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <mate charset="UTF-8">
+            <title>用户注册</title>
+        </head>
+        <body>
+            <!-- 这里的action是表单要提交过去的url地址，method是提交的方法，onsubmit是提交时要执行的函数-->
+            <form action = "api/v1/user/register_action" method="get" onsubmit="return check(this)"></form>
+                用户名称：<input type = "text" name="username"><br>
+                用户号码: <input type = "text" name="phone"><br>
+                用户密码：<input type = "password" name="password"><br>
+                <!-- 这里的onclick跟上面的onsubmit一样，这里是在点击：“注册”后执行对应的函数-->
+                <input type = "submit" value="注册" onclick = "check(this.form)">
+            </form>
+            </body>
+
+            <script type= "text/javascript">
+                function check(form){
+                    // 验证用户名不能为空
+                    if(form.username.value==''){
+                        alert("用户名不能为空");
+                        form.username.focus();
+                        return false;
+                    }
+                    // 验证电话号码不能为空
+                    if(form.phone.value==''){
+                        alert("电话号码不能为空");
+                        form.phone.focus();
+                        return false;
+                    }
+                    // 验证密码不能为空
+                    if(form.password.value==''){
+                        alert("密码不能为空");
+                        form.password.focus();
+                        return false;
+                    }
+                }
+            </script>
+    </html>
